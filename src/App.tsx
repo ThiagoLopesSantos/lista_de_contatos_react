@@ -1,12 +1,16 @@
-import EstiloGlobal from './styles'
+import Header from './containers/Header'
+import ListaDeContatos from './containers/ListaDeContatos'
+import EstiloGlobal, { Container } from './styles'
 
 function App() {
   return (
-    <div className="App">
+    <>
       <EstiloGlobal />
-
-      <h1>hello</h1>
-    </div>
+      <Container>
+        <Header />
+        <ListaDeContatos />
+      </Container>
+    </>
   )
 }
 

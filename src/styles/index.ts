@@ -1,4 +1,5 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
+import { flexCenter } from './flex'
 
 const EstiloGlobal = createGlobalStyle`
   * {
@@ -8,5 +9,11 @@ const EstiloGlobal = createGlobalStyle`
       font-family: "Source Code Pro", sans-serif;
       list-style: none;
     }
+`
+
+export const Container = styled.div`
+  ${flexCenter}
+  flex-direction: column;
+  row-gap: 20px;
 `
 export default EstiloGlobal
