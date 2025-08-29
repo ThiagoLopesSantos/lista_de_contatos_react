@@ -1,5 +1,5 @@
 export default {
-  large: '32px',
-  medium: '24px',
-  small: '16px'
+  large: '24px',
+  medium: '16px',
+  small: '14px'
 }

@@ -12,13 +12,13 @@ export const Card = styled.div`
 `
 export const CardActions = styled.div`
   display: flex;
+  height: 20px;
+  margin-bottom: 8px;
   justify-content: space-between;
+  text-transform: capitalize;
 `
 export const CardTag = styled.span`
   ${flexCenter}
-  max-width: 100px;
-  margin-bottom: 8px;
-  text-transform: capitalize;
   border-top: 1px solid ${themes.preto};
   border-right: 1px solid ${themes.preto};
   border-bottom: 1px solid ${themes.preto};
@@ -26,36 +26,21 @@ export const CardTag = styled.span`
   background-color: ${themes.roxo};
   border-radius: 0 8px 8px 0;
 `
+
+export const Title = styled.h3`
+  font-size: ${variaveis.medium};
+  font-weight: bold;
+  border-bottom: 1px solid;
+  height: 20px;
+  padding: 0 150px;
+`
 export const CardBtns = styled.div`
   display: flex;
   margin-right: 32px;
   font-size: ${variaveis.small};
   gap: 20px;
 `
-export const CardBtnEdt = styled.button`
-  ${flexCenter}
-  gap: 5px;
-  align-items: center;
-  padding: 0 4px;
-  background-color: ${themes.laranja};
-  height: 20px;
-  text-align: center;
-  border: 1px solid;
-  cursor: pointer;
-  font-weight: bold;
-`
-export const CardBtnRmv = styled.button`
-  ${flexCenter}
-  gap: 5px;
-  align-items: center;
-  padding: 0 4px;
-  background-color: ${themes.vermelho};
-  height: 20px;
-  text-align: center;
-  border: 1px solid;
-  cursor: pointer;
-  font-weight: bold;
-`
+
 export const CardData = styled.div`
   ${flexCenter}
   flex-direction: column;
@@ -70,19 +55,33 @@ export const CardInputs = styled.div`
   width: 100%;
   padding: 0 10px;
   text-align: start;
+  font-size: ${variaveis.medium};
   border-bottom: 1px solid ${themes.preto};
 `
-export const CardDescription = styled.textarea`
-  border: none;
+export const CardDescription = styled.span`
   width: 85%;
-  display: block;
-  background-color: transparent;
-  outline: none;
-  resize: none;
-  font-size: ${variaveis.small};
-  padding-top: 18px;
+  padding: 18px;
+`
+export const CardBtn = styled.button`
+  ${flexCenter}
+  gap: 5px;
+  padding: 0 4px;
+  height: 20px;
+  border: 1px solid;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: capitalize;
+  background-color: ${themes.laranja};
+  color: ${themes.preto};
 
-  &:focus {
-    border-bottom: 1px solid ${themes.roxo};
+  &:hover {
+    background-color: ${themes.cinzaEscuro};
+    color: ${themes.branco};
   }
+`
+export const BtnSave = styled(CardBtn)`
+  background-color: ${themes.verde};
+`
+export const BtnCancelRemove = styled(CardBtn)`
+  background-color: ${themes.vermelho};
 `
