@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import themes from '../../styles/themes'
 import variaveis from '../../styles/variaveis'
-import { flexCenter } from '../../styles/flex'
+import { flexCenter } from '../../styles/flexCenter'
 
 export const ItrContainer = styled.div`
   ${flexCenter}
@@ -48,7 +48,7 @@ export const BtnIcon = styled.div`
   border-radius: 8px;
   color: ${themes.branco};
   background-color: ${themes.laranja};
-  box-shadow: 0 2px 2px ${themes.cinzaEscuro};
+  box-shadow: 0 2px 2px ${themes.preto};
 `
 export const SrcIcon = styled.i`
   color: ${themes.branco};
@@ -60,7 +60,7 @@ export const SrcInput = styled.input`
   border: none;
 
   &::placeholder {
-    color: ${themes.cinzaClaro};
+    color: ${themes.cinzaEscuro};
     padding-left: 10px;
   }
 `

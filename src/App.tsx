@@ -1,5 +1,5 @@
 import Header from './containers/Header'
-import ListaDeContatos from './containers/ListaDeContatos'
+import ContactList from './containers/ContactList'
 import EstiloGlobal, { Container } from './styles'
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
       <EstiloGlobal />
       <Container>
         <Header />
-        <ListaDeContatos />
+        <ContactList />
       </Container>
     </>
   )

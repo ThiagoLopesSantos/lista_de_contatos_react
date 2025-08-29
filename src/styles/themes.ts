@@ -7,7 +7,8 @@ export default {
   vermelho: '#FE674D',
   brancoOpaco: 'rgba(249, 249, 249, 0.43)',
   branco: '#F9F9F9',
-  preto: '#000',
-  cinzaClaro: '#AAA',
-  cinzaEscuro: '#444'
+  preto: '#333',
+  pretoOpaco: 'rgba(0, 0, 0, 0.60)',
+  cinzaClaro: '#d9d9d9',
+  cinzaEscuro: '#a9a9a9'
 }

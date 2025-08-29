@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components'
-import { flexCenter } from './flex'
+import { flexCenter } from './flexCenter'
 
 const EstiloGlobal = createGlobalStyle`
   * {
@@ -14,6 +14,5 @@ const EstiloGlobal = createGlobalStyle`
 export const Container = styled.div`
   ${flexCenter}
   flex-direction: column;
-  row-gap: 20px;
 `
 export default EstiloGlobal

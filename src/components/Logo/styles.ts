@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 import variaveis from '../../styles/variaveis'
 import themes from '../../styles/themes'
-import { flexCenter } from '../../styles/flex'
+import { flexCenter } from '../../styles/flexCenter'
 
 export const LogoContainer = styled.div`
   ${flexCenter}
   max-width: 400px;
   border-radius: 0px 0px 8px 8px;
-  box-shadow: 0 4px 8px ${themes.cinzaEscuro};
+  box-shadow: 0 4px 8px ${themes.preto};
   background-color: ${themes.laranja};
 
   h1 {
