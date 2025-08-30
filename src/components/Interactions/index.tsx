@@ -19,10 +19,6 @@ const Interactions = () => (
         <Link>Adicionar contato</Link>
         <BtnIcon>+</BtnIcon>
       </BtnsSubContainer>
-      <BtnsSubContainer>
-        <Link>Editar contato</Link>
-        <BtnIcon>+</BtnIcon>
-      </BtnsSubContainer>
     </BtnsContainer>
   </ItrContainer>
 )
