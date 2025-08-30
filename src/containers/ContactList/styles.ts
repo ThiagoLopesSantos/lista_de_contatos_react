@@ -12,7 +12,7 @@ export const ListContainer = styled.div`
 export const Title = styled.h2`
   color: ${themes.branco};
   font-size: ${variaveis.medium};
-  background-color: ${themes.azul};
+  background-color: ${themes.pretoOpaco};
   border-radius: 8px 8px 0 0;
   padding: 4px 0;
 `
