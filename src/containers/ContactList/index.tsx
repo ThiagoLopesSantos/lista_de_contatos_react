@@ -5,12 +5,20 @@ import { RootReducer } from '../../store'
 
 const ContactList = () => {
   const { itens } = useSelector((state: RootReducer) => state.contacts)
+  const { filtering } = useSelector((state: RootReducer) => state.filtering)
+
+  const contactFiltered = () => {
+    return itens.filter(
+      (item) =>
+        item.name.toLocaleLowerCase().search(filtering.toLocaleLowerCase()) >= 0
+    )
+  }
 
   return (
     <S.ListContainer>
       <S.Title>Contatos</S.Title>
       <ul>
-        {itens.map((c) => (
+        {contactFiltered().map((c) => (
           <li key={c.name}>
             <Contacts
               category={c.category}
