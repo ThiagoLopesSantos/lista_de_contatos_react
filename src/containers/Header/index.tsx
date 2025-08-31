@@ -1,4 +1,4 @@
-import Categories from '../../components/Categotegories'
+import Categories from '../../components/Categories'
 import Interactions from '../../components/Interactions'
 import Logo from '../../components/Logo'
 import { CtgContainer, HeaderContainer } from './styles'

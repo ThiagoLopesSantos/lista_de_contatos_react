@@ -27,12 +27,15 @@ export const CardTag = styled.span`
   border-radius: 0 8px 8px 0;
 `
 
-export const Title = styled.h3`
+export const InputTitle = styled.input`
   font-size: ${variaveis.medium};
   font-weight: bold;
   border-bottom: 1px solid;
+  width: 100%;
+  text-align: center;
   height: 20px;
-  padding: 0 150px;
+  background-color: transparent;
+  border: none;
 `
 export const CardBtns = styled.div`
   display: flex;
@@ -58,9 +61,12 @@ export const CardInputs = styled.div`
   font-size: ${variaveis.medium};
   border-bottom: 1px solid ${themes.preto};
 `
-export const CardDescription = styled.span`
+export const InputCardDescription = styled.input`
   width: 85%;
   padding: 18px;
+  border: none;
+  font-size: ${variaveis.medium};
+  background-color: transparent;
 `
 export const CardBtn = styled.button`
   ${flexCenter}
