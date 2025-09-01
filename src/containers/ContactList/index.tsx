@@ -27,16 +27,29 @@ const ContactList = () => {
     return itensFiltered
   }
 
+  const showFiltering = (amount: number) => {
+    let message = ''
+    const complement =
+      filtering !== undefined && filtering.length > 0
+        ? ` e busca por "${filtering}"`
+        : ''
+
+    if (fCategory === 'todos') {
+      message = `${amount} contato(s) encontrado(s) como: "todos" ${complement}`
+    } else {
+      message = `${amount} contato(s) encontrado(s) como: "${fCategory}"`
+    }
+    return message
+  }
+
   const filtered = contactFiltered()
+  const message = showFiltering(filtered.length)
 
   return (
     <S.ListContainer>
       <S.Title>
         Contatos
-        <S.TextFilter>
-          {filtered.length} contatos marcados como: {fCategory} e busca por (
-          {filtering})
-        </S.TextFilter>
+        <S.TextFilter>{message}</S.TextFilter>
       </S.Title>
       <ul>
         {filtered.map((c) => (

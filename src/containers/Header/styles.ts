@@ -16,7 +16,7 @@ export const CtgContainer = styled.div`
   width: 100%;
   gap: 20px;
   color: ${themes.branco};
-  background-color: ${themes.roxo};
+  border-top: 4px solid ${themes.roxo};
   font-weight: bold;
 
   @media (max-width: 769px) {

@@ -17,6 +17,7 @@ export const Title = styled.h2`
   padding: 4px 0;
 `
 export const TextFilter = styled.p`
-  color: ${themes.branco};
+  color: ${themes.laranjaClaro};
   margin-top: 10px;
+  font-size: ${variaveis.small};
 `
