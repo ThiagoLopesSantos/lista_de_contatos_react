@@ -23,7 +23,3 @@ export const CtgContainer = styled.div`
     display: block;
   }
 `
-export const TextFilter = styled.p`
-  color: ${themes.branco};
-  margin-top: 10px;
-`

@@ -1,10 +1,9 @@
 import styled from 'styled-components'
 import themes from '../../styles/themes'
-import { Props } from '.'
 
-type PropsOmit = Omit<Props, 'capition' | 'counter'>
+type PropsActive = { active: boolean }
 
-export const BtnCategory = styled.button<PropsOmit>`
+export const BtnCategory = styled.button<PropsActive>`
   background-color: ${(props) =>
     props.active ? `${themes.laranja}` : `transparent`};
   color: ${themes.branco};

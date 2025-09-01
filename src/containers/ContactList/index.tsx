@@ -5,20 +5,41 @@ import { RootReducer } from '../../store'
 
 const ContactList = () => {
   const { itens } = useSelector((state: RootReducer) => state.contacts)
-  const { filtering } = useSelector((state: RootReducer) => state.filtering)
+  const { filtering, fCategory } = useSelector(
+    (state: RootReducer) => state.filtering
+  )
 
   const contactFiltered = () => {
-    return itens.filter(
-      (item) =>
-        item.name.toLocaleLowerCase().search(filtering.toLocaleLowerCase()) >= 0
-    )
+    let itensFiltered = itens
+
+    if (fCategory !== 'todos') {
+      itensFiltered = itensFiltered.filter(
+        (item) =>
+          item.category.toLocaleLowerCase() === fCategory.toLocaleLowerCase()
+      )
+    }
+    if (filtering) {
+      itensFiltered = itensFiltered.filter((item) =>
+        item.name.toLocaleLowerCase().includes(filtering.toLocaleLowerCase())
+      )
+    }
+
+    return itensFiltered
   }
+
+  const filtered = contactFiltered()
 
   return (
     <S.ListContainer>
-      <S.Title>Contatos</S.Title>
+      <S.Title>
+        Contatos
+        <S.TextFilter>
+          {filtered.length} contatos marcados como: {fCategory} e busca por (
+          {filtering})
+        </S.TextFilter>
+      </S.Title>
       <ul>
-        {contactFiltered().map((c) => (
+        {filtered.map((c) => (
           <li key={c.name}>
             <Contacts
               category={c.category}

@@ -16,3 +16,7 @@ export const Title = styled.h2`
   border-radius: 8px 8px 0 0;
   padding: 4px 0;
 `
+export const TextFilter = styled.p`
+  color: ${themes.branco};
+  margin-top: 10px;
+`
