@@ -30,7 +30,7 @@ export const BtnsSubContainer = styled.div`
     margin-top: 10px;
   }
 `
-export const Link = styled.a`
+export const Link = styled.button`
   color: ${themes.branco};
   background-color: transparent;
   cursor: pointer;
