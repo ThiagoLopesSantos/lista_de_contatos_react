@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import variaveis from '../../styles/variaveis'
 import themes from '../../styles/themes'
 import { flexCenter } from '../../styles/flexCenter'
+import { device } from '../../styles/breakpoints'
 
 export const LogoContainer = styled.div`
   ${flexCenter}
@@ -15,8 +16,9 @@ export const LogoContainer = styled.div`
     font-size: ${variaveis.large};
     padding: 16px 32px;
 
-    @media (max-width: 769px) {
+    ${device.mobile} {
       font-size: ${variaveis.medium};
+      padding: 10px 20px;
     }
   }
 `

@@ -1,9 +1,14 @@
-import { HomeIcon } from 'lucide-react'
-import { useNavigate } from 'react-router-dom'
+import { HomeIcon, Menu } from 'lucide-react'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 
 import Categories from '../../components/Categories'
 import Interactions from '../../components/Interactions'
-import { Link } from '../../styles/index'
+import {
+  HamburgerButton,
+  HeaderMobileContainer,
+  Link
+} from '../../styles/index'
 import Logo from '../../components/Logo'
 import { CtgContainer, HeaderContainer } from '../../styles'
 import { LinkCbBtn } from '../../styles/index'
@@ -14,21 +19,51 @@ type Props = {
   showFilters: boolean
 }
 
-const Header = ({ showFilters }: Props) => {
+const Header = () => {
   const navigate = useNavigate()
+  const location = useLocation()
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const showFilters = location.pathname === '/'
+  const closeMenu = () => {
+    setIsMenuOpen(false)
+  }
 
   return (
     <HeaderContainer>
       <Logo />
+      <HeaderMobileContainer>
+        {showFilters && (
+          <HamburgerButton onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <Menu />
+          </HamburgerButton>
+        )}
+      </HeaderMobileContainer>
       {showFilters ? (
         <>
           <Interactions />
-          <CtgContainer>
+          <CtgContainer isMenuOpen={isMenuOpen}>
             <p>Categoria:</p>
-            <Categories fCategory={Category.TODOS} capition="todos" />
-            <Categories fCategory={Category.FAMILIA} capition="familia" />
-            <Categories fCategory={Category.AMIGOS} capition="amigos" />
-            <Categories fCategory={Category.TRABALHO} capition="trabalho" />
+            <Categories
+              fCategory={Category.TODOS}
+              capition="todos"
+              onCategoryClick={closeMenu}
+            />
+            <Categories
+              fCategory={Category.FAMILIA}
+              capition="familia"
+              onCategoryClick={closeMenu}
+            />
+            <Categories
+              fCategory={Category.AMIGOS}
+              capition="amigos"
+              onCategoryClick={closeMenu}
+            />
+            <Categories
+              fCategory={Category.TRABALHO}
+              capition="trabalho"
+              onCategoryClick={closeMenu}
+            />
           </CtgContainer>
         </>
       ) : (

@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import themes from '../../styles/themes'
+import { device } from '../../styles/breakpoints'
 
 type PropsActive = { $active: boolean }
 
@@ -13,9 +14,9 @@ export const BtnCategory = styled.button<PropsActive>`
   font-weight: bold;
   text-transform: capitalize;
 
-  @media (max-width: 769px) {
-    margin-top: 10px;
-    margin-left: 5px;
+  ${device.mobile} {
+    width: 100%;
+    padding: 8px 12px;
   }
 
   &:hover {

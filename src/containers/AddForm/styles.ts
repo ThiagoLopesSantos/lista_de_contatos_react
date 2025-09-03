@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { flexCenter } from '../../styles/flexCenter'
 import themes from '../../styles/themes'
 import variaveis from '../../styles/variaveis'
+import { device } from '../../styles/breakpoints'
 
 export const FormContainer = styled.form`
   ${flexCenter}
@@ -14,6 +15,12 @@ export const FormContainer = styled.form`
   width: 100%;
   margin-top: 20px;
   max-width: 500px;
+
+  ${device.mobile} {
+    padding: 15px;
+    max-width: 95%;
+    margin-top: 15px;
+  }
 `
 
 export const IptCamp = styled.div`
@@ -35,11 +42,31 @@ export const IptCamp = styled.div`
     padding: 10px;
     height: 25px;
   }
+
+  ${device.mobile} {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px;
+    font-size: ${variaveis.small};
+
+    input {
+      width: 100%;
+      font-size: ${variaveis.small};
+      height: 35px;
+      padding: 5px;
+    }
+  }
 `
 
 export const InputCtg = styled.div`
   ${flexCenter}
   gap: 10px;
+
+  ${device.mobile} {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+  }
 `
 export const InputContainer = styled.div`
   ${flexCenter}
@@ -49,4 +76,9 @@ export const InputContainer = styled.div`
   width: 100%;
   padding: 20px 0;
   background-color: ${themes.laranjaClaro};
+
+  ${device.mobile} {
+    padding: 15px 0;
+    gap: 8px;
+  }
 `

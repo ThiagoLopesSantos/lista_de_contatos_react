@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import themes from '../../styles/themes'
 import variaveis from '../../styles/variaveis'
 import { flexCenter } from '../../styles/flexCenter'
+import { device } from '../../styles/breakpoints'
 
 export const ItrContainer = styled.div`
   ${flexCenter}
@@ -9,27 +10,22 @@ export const ItrContainer = styled.div`
   max-width: 1024px;
   font-size: ${variaveis.small};
   width: 100%;
+
+  ${device.mobile} {
+    margin-top: 10px;
+    flex-direction: column;
+    gap: 10px;
+  }
 `
 
 export const BtnsContainer = styled.div`
   ${flexCenter}
   gap: 20px;
 
-  @media (max-width: 769px) {
-    display: block;
-  }
-`
-export const BtnsSubContainer = styled.div`
-  ${flexCenter}
-  gap: 8px;
-  background-color: ${themes.brancoOpaco};
-  padding: 8px 16px;
-  margin: 32px 0;
-  border-color: ${themes.brancoOpaco};
-  cursor: pointer;
-
-  @media (max-width: 769px) {
-    margin-top: 10px;
+  ${device.mobile} {
+    flex-direction: column;
+    gap: 0px;
+    width: 100%;
   }
 `
 
@@ -56,5 +52,10 @@ export const SrcInput = styled.input`
   &::placeholder {
     color: ${themes.cinzaEscuro};
     padding-left: 10px;
+  }
+
+  ${device.mobile} {
+    font-size: ${variaveis.small};
+    padding: 8px;
   }
 `

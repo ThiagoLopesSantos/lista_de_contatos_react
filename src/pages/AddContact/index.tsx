@@ -3,7 +3,7 @@ import Header from '../../containers/Header'
 
 const AddContact = () => (
   <>
-    <Header showFilters={false} />
+    <Header />
     <AddForm />
   </>
 )

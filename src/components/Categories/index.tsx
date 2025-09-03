@@ -7,9 +7,10 @@ import { Category } from '../../utils/enums/Contact'
 export type Props = {
   capition: string
   fCategory: Category
+  onCategoryClick: () => void
 }
 
-const Categories = ({ capition, fCategory }: Props) => {
+const Categories = ({ capition, fCategory, onCategoryClick }: Props) => {
   const dispatch = useDispatch()
   const { filtering: filterState, contacts } = useSelector(
     (state: RootReducer) => state
@@ -23,7 +24,7 @@ const Categories = ({ capition, fCategory }: Props) => {
     if (fCategory === Category.TODOS) {
       return contacts.itens.length
     }
-    // Para as outras categorias, filtra e conta a quantidade de itens que correspondem
+
     return contacts.itens.filter(
       (item) =>
         item.category.toLocaleLowerCase() === fCategory.toLocaleLowerCase()
@@ -32,6 +33,7 @@ const Categories = ({ capition, fCategory }: Props) => {
 
   const fCtg = () => {
     dispatch(changeCategory(fCategory))
+    onCategoryClick()
   }
 
   const active = isActive()
