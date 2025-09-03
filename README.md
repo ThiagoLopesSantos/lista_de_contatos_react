@@ -22,8 +22,14 @@ O projeto simula uma **lista de contatos** que permite cadastrar, editar, exclui
 ### 🔹 Tela Inicial
 ![Tela inicial da aplicação](./docs/screenshot-home.png)
 
+### 🔹 Tela Inicial Responsiva
+![Tela inicial da aplicação](./docs/screenshot-responsive.png)
+
 ### 🔹 Adicionar Contato
 ![Formulário de cadastro de contato](./docs/screenshot-add.png)
+
+### 🔹 Adicionar Contato Responsivo
+![Formulário de cadastro de contato](./docs/screenshot-responsive-add.png)
 
 ### 🔹 Editar Contato
 ![Edição de contato existente](./docs/screenshot-edit.png)
