@@ -1,13 +1,14 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { Category } from '../../utils/enums/Contact'
 
 type FilterState = {
   filtering?: string
-  fCategory: 'familia' | 'amigos' | 'trabalho' | 'todos'
+  fCategory: Category
 }
 
 const initialState: FilterState = {
   filtering: '',
-  fCategory: 'todos'
+  fCategory: Category.TODOS
 }
 
 const filterSlice = createSlice({
@@ -17,8 +18,8 @@ const filterSlice = createSlice({
     changeFilter: (state, action: PayloadAction<string>) => {
       state.filtering = action.payload
     },
-    changeCategory: (state, action: PayloadAction<FilterState>) => {
-      state.fCategory = action.payload.fCategory
+    changeCategory: (state, action: PayloadAction<Category>) => {
+      state.fCategory = action.payload
     }
   }
 })

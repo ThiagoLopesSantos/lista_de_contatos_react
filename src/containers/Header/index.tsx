@@ -8,6 +8,7 @@ import Logo from '../../components/Logo'
 import { CtgContainer, HeaderContainer } from '../../styles'
 import { LinkCbBtn } from '../../styles/index'
 import { BtnIcon } from '../../components/Interactions/styles'
+import { Category } from '../../utils/enums/Contact'
 
 type Props = {
   showFilters: boolean
@@ -24,10 +25,10 @@ const Header = ({ showFilters }: Props) => {
           <Interactions />
           <CtgContainer>
             <p>Categoria:</p>
-            <Categories fCategory="todos" capition="todos" />
-            <Categories fCategory="familia" capition="familia" />
-            <Categories fCategory="amigos" capition="amigos" />
-            <Categories fCategory="trabalho" capition="trabalho" />
+            <Categories fCategory={Category.TODOS} capition="todos" />
+            <Categories fCategory={Category.FAMILIA} capition="familia" />
+            <Categories fCategory={Category.AMIGOS} capition="amigos" />
+            <Categories fCategory={Category.TRABALHO} capition="trabalho" />
           </CtgContainer>
         </>
       ) : (

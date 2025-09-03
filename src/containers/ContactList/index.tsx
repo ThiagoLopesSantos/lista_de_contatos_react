@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux'
 import Contacts from '../../components/Contacts'
 import * as S from './styles'
 import { RootReducer } from '../../store'
+import { Category } from '../../utils/enums/Contact'
 
 const ContactList = () => {
   const { itens } = useSelector((state: RootReducer) => state.contacts)
@@ -12,7 +13,7 @@ const ContactList = () => {
   const contactFiltered = () => {
     let itensFiltered = itens
 
-    if (fCategory !== 'todos') {
+    if (fCategory !== Category.TODOS) {
       itensFiltered = itensFiltered.filter(
         (item) =>
           item.category.toLocaleLowerCase() === fCategory.toLocaleLowerCase()
@@ -34,7 +35,7 @@ const ContactList = () => {
         ? ` e busca por "${filtering}"`
         : ''
 
-    if (fCategory === 'todos') {
+    if (fCategory === Category.TODOS) {
       message = `${amount} contato(s) encontrado(s) como: "todos" ${complement}`
     } else {
       message = `${amount} contato(s) encontrado(s) como: "${fCategory}"`

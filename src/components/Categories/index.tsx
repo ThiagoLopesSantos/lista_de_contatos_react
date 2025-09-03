@@ -2,23 +2,25 @@ import { useDispatch, useSelector } from 'react-redux'
 import * as S from './styles'
 import { changeCategory } from '../../store/reducers/filterSlice'
 import { RootReducer } from '../../store'
+import { Category } from '../../utils/enums/Contact'
 
 export type Props = {
   capition: string
-  fCategory: 'familia' | 'amigos' | 'trabalho' | 'todos'
+  fCategory: Category
 }
 
 const Categories = ({ capition, fCategory }: Props) => {
   const dispatch = useDispatch()
-  const { filtering, contacts } = useSelector((state: RootReducer) => state)
+  const { filtering: filterState, contacts } = useSelector(
+    (state: RootReducer) => state
+  )
 
   const isActive = () => {
-    const sameCategory = filtering.fCategory === fCategory
-    return sameCategory
+    return filterState.fCategory === fCategory
   }
 
   const counterContacts = () => {
-    if (fCategory === 'todos') {
+    if (fCategory === Category.TODOS) {
       return contacts.itens.length
     }
     // Para as outras categorias, filtra e conta a quantidade de itens que correspondem
@@ -29,11 +31,7 @@ const Categories = ({ capition, fCategory }: Props) => {
   }
 
   const fCtg = () => {
-    dispatch(
-      changeCategory({
-        fCategory
-      })
-    )
+    dispatch(changeCategory(fCategory))
   }
 
   const active = isActive()

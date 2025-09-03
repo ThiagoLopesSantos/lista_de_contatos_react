@@ -30,7 +30,7 @@ const AddForm = () => {
         name,
         email,
         phone,
-        category: category as Category
+        category: category
       })
     )
     navigate('/')
@@ -64,7 +64,7 @@ const AddForm = () => {
           <label htmlFor="phone">Telefone:</label>
           <IMaskInput
             id="phone"
-            mask="(00) 00000-0000"
+            mask="(00) 0 0000-0000"
             radix="."
             value={phone}
             onAccept={handleAccept}
