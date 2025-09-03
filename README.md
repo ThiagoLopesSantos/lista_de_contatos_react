@@ -1,46 +1,103 @@
-# Getting Started with Create React App
+# 📇 Lista de Contatos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplicação desenvolvida em **React + TypeScript** durante o curso da [EBAC (Escola Britânica de Artes Criativas e Tecnologia)](https://ebaconline.com.br/), com foco em **Redux Toolkit, estilização modular e boas práticas de front-end**.  
 
-## Available Scripts
+O projeto simula uma **lista de contatos** que permite cadastrar, editar, excluir e filtrar contatos de forma prática e intuitiva.  
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## ✨ Funcionalidades
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- ➕ **Adicionar contato** com nome, e-mail, telefone e categoria.  
+- 👀 **Visualizar contatos** em cartões dinâmicos e responsivos.  
+- ✏️ **Editar informações** de contatos já cadastrados.  
+- 🗑️ **Remover contatos** da lista.  
+- 🔍 **Filtrar contatos** por categoria e/ou termo de busca.  
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## 🖼️ Layout
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🔹 Tela Inicial
+![Tela inicial da aplicação](./docs/screenshot-home.png)
 
-### `npm run build`
+### 🔹 Adicionar Contato
+![Formulário de cadastro de contato](./docs/screenshot-add.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🔹 Editar Contato
+![Edição de contato existente](./docs/screenshot-edit.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠️ Tecnologias Utilizadas
 
-### `npm run eject`
+- ⚛️ **React** – construção da interface  
+- 🟦 **TypeScript** – segurança de tipos e robustez do código  
+- 🗂️ **Redux Toolkit** – gerenciamento de estado global  
+- 💅 **Styled Components** – estilização modular e dinâmica  
+- 🌐 **React Router DOM** – navegação entre páginas  
+- 🔢 **IMask.js + react-imask** – máscaras em inputs (ex.: telefone)  
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📚 Aprendizados
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Durante o desenvolvimento deste projeto, aprimorei habilidades importantes:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- **Gerenciamento de Estado Global com Redux Toolkit**  
+  Uso de `createSlice`, `useSelector` e `useDispatch` para compartilhar dados entre componentes.  
 
-## Learn More
+- **Formulários controlados**  
+  Construção de inputs dinâmicos que mantêm a interface sincronizada com o estado da aplicação.  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Máscaras em formulários**  
+  Aplicação de máscaras com `IMask.js`, manipulando valores "limpos" para salvar no estado e valores formatados para exibir ao usuário.  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Tipagem avançada com enums**  
+  Uso de `enum` no TypeScript para categorias, evitando erros de digitação e facilitando manutenção.  
+
+- **Estilização avançada com Styled Components**  
+  Props dinâmicas, `transient props` (`$active`) e aplicação de estilos em componentes de terceiros.  
+
+- **Refatoração e depuração**  
+  Organização do código, simplificação de lógicas de filtragem e resolução de bugs relacionados à tipagem e renderização.  
+
+---
+
+## 📂 Estrutura do Projeto
+
+src/
+├── components/ # Componentes reutilizáveis
+├── containers/ # Seções principais (Header, Lista de Contatos, etc)
+├── store/ # Redux Toolkit (slices e store)
+├── styles/ # Estilos globais, temas e variáveis
+└── App.tsx # Componente raiz
+
+---
+👨‍💻 Autor
+
+Desenvolvido por Thiago Lopes 🚀
+
+LinkedIn: www.linkedin.com/in/thiago-lopes-front-end
+
+---
+
+## 🚀 Como executar
+
+```bash
+# Clone o repositório
+git clone https://github.com/ThiagoLopesSantos/lista_de_contatos_react.git
+
+# Acesse a pasta
+cd lista_de_contatos_react
+
+# Instale as dependências
+npm install
+
+# Rode o projeto
+npm start
+
+Aplicação disponível em: http://localhost:3000
+
+
+
