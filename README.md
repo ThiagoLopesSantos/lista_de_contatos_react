@@ -65,14 +65,14 @@ Durante o desenvolvimento deste projeto, aprimorei habilidades importantes:
 ---
 
 ## 📂 Estrutura do Projeto
-
+```bash
 src/
 ├── components/ # Componentes reutilizáveis
 ├── containers/ # Seções principais (Header, Lista de Contatos, etc)
 ├── store/ # Redux Toolkit (slices e store)
 ├── styles/ # Estilos globais, temas e variáveis
 └── App.tsx # Componente raiz
-
+```
 ---
 👨‍💻 Autor
 
@@ -96,7 +96,7 @@ npm install
 
 # Rode o projeto
 npm start
-
+```
 Aplicação disponível em: http://localhost:3000
 
 
