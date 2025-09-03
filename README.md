@@ -37,6 +37,7 @@ O projeto simula uma **lista de contatos** que permite cadastrar, editar, exclui
 - 💅 **Styled Components** – estilização modular e dinâmica  
 - 🌐 **React Router DOM** – navegação entre páginas  
 - 🔢 **IMask.js + react-imask** – máscaras em inputs (ex.: telefone)  
+- 🖌️ **Lucide Icons** – ícones leves e personalizáveis  
 
 ---
 
@@ -64,7 +65,127 @@ Durante o desenvolvimento deste projeto, aprimorei habilidades importantes:
 
 ---
 
-## 📂 Estrutura do Projeto
+## 💡 Exemplos de Uso dos Componentes
+
+### **1. Home**
+Renderiza o **Header** e a **Lista de Contatos**.
+
+```tsx
+import Header from '../../containers/Header'
+import ContactList from '../../containers/ContactList'
+
+const Home = () => (
+  <>
+    <Header showFilters={true} />
+    <ContactList />
+  </>
+)
+
+export default Home
+```
+---
+
+2. AddContact
+
+Página de cadastro de novos contatos, usando o AddForm.
+```tsx
+import Header from '../../containers/Header'
+import AddForm from '../../containers/AddForm'
+
+const AddContact = () => (
+  <>
+    <Header showFilters={false} />
+    <AddForm />
+  </>
+)
+
+export default AddContact
+```
+3. AddForm
+
+Formulário controlado para adicionar contatos, integrado com Redux.
+
+```tsx
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { register } from '../../store/reducers/contactsSlice'
+
+const AddForm = () => {
+  const dispatch = useDispatch()
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    dispatch(register({ name, email, phone: '', category: 'familia' }))
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input value={name} onChange={e => setName(e.target.value)} placeholder="Nome" />
+      <input value={email} onChange={e => setEmail(e.target.value)} placeholder="E-mail" />
+      <button type="submit">Cadastrar</button>
+    </form>
+  )
+}
+```
+4. ContactList
+
+Renderiza a lista de contatos filtrados pelo Redux.
+```tsx
+import { useSelector } from 'react-redux'
+import Contacts from '../../components/Contacts'
+import { RootReducer } from '../../store'
+
+const ContactList = () => {
+  const { itens } = useSelector((state: RootReducer) => state.contacts)
+
+  return (
+    <ul>
+      {itens.map(contact => (
+        <Contacts key={contact.id} {...contact} />
+      ))}
+    </ul>
+  )
+}
+
+export default ContactList
+```
+5. Contacts
+
+Cartão individual do contato, permite edição e remoção.
+```tsx
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { edit, remove } from '../../store/reducers/contactsSlice'
+import { Save, Edit, Trash2 } from 'lucide-react'
+
+const Contacts = ({ id, name, email }) => {
+  const dispatch = useDispatch()
+  const [editing, setEditing] = useState(false)
+
+  return (
+    <div>
+      {editing ? (
+        <>
+          <input value={name} onChange={e => {}} />
+          <button onClick={() => dispatch(edit({ id, name, email }))}><Save /></button>
+          <button onClick={() => setEditing(false)}>Cancelar</button>
+        </>
+      ) : (
+        <>
+          <span>{name}</span>
+          <button onClick={() => setEditing(true)}><Edit /></button>
+          <button onClick={() => dispatch(remove(id))}><Trash2 /></button>
+        </>
+      )}
+    </div>
+  )
+}
+
+export default Contacts
+```
+📂 Estrutura do Projeto
 ```bash
 src/
 ├── components/ # Componentes reutilizáveis
@@ -73,17 +194,14 @@ src/
 ├── styles/ # Estilos globais, temas e variáveis
 └── App.tsx # Componente raiz
 ```
----
 👨‍💻 Autor
 
 Desenvolvido por Thiago Lopes 🚀
-
 LinkedIn: www.linkedin.com/in/thiago-lopes-front-end
 
 ---
 
-## 🚀 Como executar
-
+🚀 Como Executar
 ```bash
 # Clone o repositório
 git clone https://github.com/ThiagoLopesSantos/lista_de_contatos_react.git
@@ -97,7 +215,3 @@ npm install
 # Rode o projeto
 npm start
 ```
-Aplicação disponível em: http://localhost:3000
-
-
-
