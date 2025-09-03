@@ -12,7 +12,8 @@ O projeto simula uma **lista de contatos** que permite cadastrar, editar, exclui
 - 👀 **Visualizar contatos** em cartões dinâmicos e responsivos.  
 - ✏️ **Editar informações** de contatos já cadastrados.  
 - 🗑️ **Remover contatos** da lista.  
-- 🔍 **Filtrar contatos** por categoria e/ou termo de busca.  
+- 🔍 **Filtrar contatos** por categoria e/ou termo de busca.
+- **Menu Hamburguer Responsivo**: Um menu retrátil para navegação das categorias em dispositivos móveis. 
 
 ---
 
@@ -61,7 +62,10 @@ Durante o desenvolvimento deste projeto, aprimorei habilidades importantes:
   Props dinâmicas, `transient props` (`$active`) e aplicação de estilos em componentes de terceiros.  
 
 - **Refatoração e depuração**  
-  Organização do código, simplificação de lógicas de filtragem e resolução de bugs relacionados à tipagem e renderização.  
+  Organização do código, simplificação de lógicas de filtragem e resolução de bugs relacionados à tipagem e renderização.
+- **Comunicação entre Componentes Pai-Filho**
+  Como passar funções como props para que um componente filho possa alterar o estado de um componente pai, criando uma experiência de usuário mais interativa e responsiva.  
+  
 
 ---
 
