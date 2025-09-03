@@ -3,7 +3,7 @@ import Header from '../../containers/Header'
 
 const Home = () => (
   <>
-    <Header />
+    <Header showFilters={true} />
     <ContactList />
   </>
 )

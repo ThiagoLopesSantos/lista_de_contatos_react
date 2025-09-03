@@ -21,24 +21,18 @@ export const BtnsContainer = styled.div`
 `
 export const BtnsSubContainer = styled.div`
   ${flexCenter}
-  padding: 8px 16px;
   gap: 8px;
-  cursor: pointer;
   background-color: ${themes.brancoOpaco};
+  padding: 8px 16px;
+  margin: 32px 0;
+  border-color: ${themes.brancoOpaco};
+  cursor: pointer;
 
   @media (max-width: 769px) {
     margin-top: 10px;
   }
 `
-export const Link = styled.button`
-  color: ${themes.branco};
-  background-color: transparent;
-  cursor: pointer;
-  font-weight: bold;
-  border: none;
-  text-align: center;
-  margin: 0 auto;
-`
+
 export const BtnIcon = styled.div`
   ${flexCenter}
   font-weight: bold;

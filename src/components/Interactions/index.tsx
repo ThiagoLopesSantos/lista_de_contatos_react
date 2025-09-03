@@ -1,26 +1,24 @@
 import { useDispatch, useSelector } from 'react-redux'
-import {
-  BtnIcon,
-  BtnsContainer,
-  BtnsSubContainer,
-  ItrContainer,
-  Link,
-  SrcIcon,
-  SrcInput
-} from './styles'
+import { FilePlus2Icon, Search } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
+
+import { BtnIcon, BtnsContainer, ItrContainer, SrcInput } from './styles'
 import { RootReducer } from '../../store'
 import { changeFilter } from '../../store/reducers/filterSlice'
+import { Link, LinkCbBtn } from '../../styles/index'
 
 const Interactions = () => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
+
   const { filtering } = useSelector((state: RootReducer) => state.filtering)
 
   return (
     <ItrContainer>
       <BtnsContainer>
-        <BtnsSubContainer>
+        <LinkCbBtn as="div">
           <BtnIcon>
-            <SrcIcon className="fas fa-search"></SrcIcon>
+            <Search />
           </BtnIcon>
           <SrcInput
             type="text"
@@ -28,11 +26,13 @@ const Interactions = () => {
             value={filtering}
             onChange={(event) => dispatch(changeFilter(event.target.value))}
           />
-        </BtnsSubContainer>
-        <BtnsSubContainer>
-          <Link>Adicionar contato</Link>
-          <BtnIcon>+</BtnIcon>
-        </BtnsSubContainer>
+        </LinkCbBtn>
+        <LinkCbBtn onClick={() => navigate('/addContact')}>
+          <Link>Novo Contato</Link>
+          <BtnIcon>
+            <FilePlus2Icon />
+          </BtnIcon>
+        </LinkCbBtn>
       </BtnsContainer>
     </ItrContainer>
   )

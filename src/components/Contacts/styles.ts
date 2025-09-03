@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import themes from '../../styles/themes'
 import { flexCenter } from '../../styles/flexCenter'
 import variaveis from '../../styles/variaveis'
+import { IMaskInput } from 'react-imask'
 
 export const Card = styled.div`
   background-color: ${themes.cinzaClaro};
@@ -54,7 +55,6 @@ export const CardData = styled.div`
 
 export const CardInputs = styled.div`
   ${flexCenter}
-  justify-content: space-between;
   width: 100%;
   padding: 0 10px;
   text-align: start;
@@ -66,28 +66,13 @@ export const InputCardDescription = styled.input`
   padding: 18px;
   border: none;
   font-size: ${variaveis.medium};
+  color: ${themes.preto};
   background-color: transparent;
 `
-export const CardBtn = styled.button`
-  ${flexCenter}
-  gap: 5px;
-  padding: 0 4px;
-  height: 20px;
-  border: 1px solid;
-  cursor: pointer;
-  font-weight: bold;
-  text-transform: capitalize;
-  background-color: ${themes.laranja};
-  color: ${themes.preto};
-
-  &:hover {
-    background-color: ${themes.cinzaEscuro};
-    color: ${themes.branco};
-  }
-`
-export const BtnSave = styled(CardBtn)`
-  background-color: ${themes.verde};
-`
-export const BtnCancelRemove = styled(CardBtn)`
-  background-color: ${themes.vermelho};
+export const StyledIMaskInput = styled(IMaskInput)`
+  width: 85%;
+  padding: 18px;
+  border: none;
+  font-size: ${variaveis.medium};
+  background-color: transparent;
 `

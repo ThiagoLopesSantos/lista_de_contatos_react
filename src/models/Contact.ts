@@ -1,12 +1,14 @@
+import { Category } from '../utils/enums/Contact'
+
 class Contact {
-  category: string
+  category: Category
   name: string
   email: string
   phone: string
   id: number
 
   constructor(
-    category: string,
+    category: Category,
     name: string,
     email: string,
     phone: string,

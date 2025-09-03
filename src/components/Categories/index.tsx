@@ -40,7 +40,7 @@ const Categories = ({ capition, fCategory }: Props) => {
   const counter = counterContacts()
 
   return (
-    <S.BtnCategory active={active} onClick={fCtg}>
+    <S.BtnCategory $active={active} onClick={fCtg}>
       <span>{capition}</span> <span>{counter}</span>
     </S.BtnCategory>
   )

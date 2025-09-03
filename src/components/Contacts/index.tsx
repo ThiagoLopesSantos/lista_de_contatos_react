@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { Edit, Trash2, Save, X } from 'lucide-react'
-import * as S from './styles'
+import { IMaskInput } from 'react-imask'
+import IMask from 'imask'
 
+import * as S from './styles'
 import { remove, edit } from '../../store/reducers/contactsSlice'
 import Contact from '../../models/Contact'
+import { BtnSave, BtnCancelRemove, CardBtn } from '../../styles'
 
 type Props = Contact
 
@@ -40,6 +43,19 @@ const Contacts = ({
     setPhone(originalPhone)
   }
 
+  // Função para lidar com a mudança do telefone na edição
+  const handlePhoneAccept = (value: string, maskRef: any) => {
+    setPhone(maskRef.unmaskedValue)
+  }
+
+  // A função para formatar o telefone para a exibição
+  const formatPhone = (phoneNumber: string) => {
+    const mask = IMask.createMask({ mask: '(00) 0 0000-0000' })
+    // Use .value para formatar um valor que já possui a máscara
+    mask.value = phoneNumber
+    return mask.value
+  }
+
   return (
     <S.Card>
       <S.CardActions>
@@ -53,7 +69,7 @@ const Contacts = ({
         <S.CardBtns>
           {cardEdting ? (
             <>
-              <S.BtnSave
+              <BtnSave
                 onClick={() => {
                   dispatch(
                     edit({
@@ -69,22 +85,22 @@ const Contacts = ({
               >
                 <Save size={16} />
                 <span>salvar</span>
-              </S.BtnSave>
-              <S.BtnCancelRemove>
+              </BtnSave>
+              <BtnCancelRemove>
                 <X size={16} />
                 <span onClick={() => cancelEdit()}>cancelar</span>
-              </S.BtnCancelRemove>
+              </BtnCancelRemove>
             </>
           ) : (
             <>
-              <S.CardBtn onClick={() => setCardEdting(true)}>
+              <CardBtn onClick={() => setCardEdting(true)}>
                 <Edit size={16} />
                 <span>editar</span>
-              </S.CardBtn>
-              <S.BtnCancelRemove onClick={() => dispatch(remove(id))}>
+              </CardBtn>
+              <BtnCancelRemove onClick={() => dispatch(remove(id))}>
                 <Trash2 size={16} />
                 <span>remover</span>
-              </S.BtnCancelRemove>
+              </BtnCancelRemove>
             </>
           )}
         </S.CardBtns>
@@ -101,11 +117,20 @@ const Contacts = ({
         </S.CardInputs>
         <S.CardInputs>
           Celular:
-          <S.InputCardDescription
-            disabled={!cardEdting}
-            value={phone}
-            onChange={(event) => setPhone(event.target.value)}
-          />
+          {cardEdting ? (
+            <S.StyledIMaskInput
+              mask="(00) 0 0000-0000"
+              radix="."
+              value={phone}
+              onAccept={handlePhoneAccept}
+              placeholder="(DDD) 9 xxxx-xxxx"
+              disabled={!cardEdting}
+            />
+          ) : (
+            <S.InputCardDescription as="span">
+              {formatPhone(originalPhone)}
+            </S.InputCardDescription>
+          )}
         </S.CardInputs>
       </S.CardData>
     </S.Card>
