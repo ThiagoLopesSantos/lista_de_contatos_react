@@ -74,6 +74,8 @@ Durante o desenvolvimento deste projeto, aprimorei habilidades importantes:
   
 
 ---
+### **Em breve implementação de api...**
+---
 
 ## 💡 Exemplos de Uso dos Componentes
 
