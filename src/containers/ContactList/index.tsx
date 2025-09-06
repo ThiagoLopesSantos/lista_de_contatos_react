@@ -54,7 +54,7 @@ const ContactList = () => {
       </S.Title>
       <ul>
         {filtered.map((c) => (
-          <li key={c.name}>
+          <li key={c.id}>
             <Contacts
               category={c.category}
               name={c.name}

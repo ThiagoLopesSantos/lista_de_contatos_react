@@ -5,12 +5,12 @@ import { RootReducer } from '../../store'
 import { Category } from '../../utils/enums/Contact'
 
 export type Props = {
-  capition: string
+  caption: string
   fCategory: Category
   onCategoryClick: () => void
 }
 
-const Categories = ({ capition, fCategory, onCategoryClick }: Props) => {
+const Categories = ({ caption, fCategory, onCategoryClick }: Props) => {
   const dispatch = useDispatch()
   const { filtering: filterState, contacts } = useSelector(
     (state: RootReducer) => state
@@ -26,8 +26,7 @@ const Categories = ({ capition, fCategory, onCategoryClick }: Props) => {
     }
 
     return contacts.itens.filter(
-      (item) =>
-        item.category.toLocaleLowerCase() === fCategory.toLocaleLowerCase()
+      (item) => item.category.toLowerCase() === fCategory.toLowerCase()
     ).length
   }
 
@@ -41,7 +40,7 @@ const Categories = ({ capition, fCategory, onCategoryClick }: Props) => {
 
   return (
     <S.BtnCategory $active={active} onClick={fCtg}>
-      <span>{capition}</span> <span>{counter}</span>
+      <span>{caption}</span> <span>{counter}</span>
     </S.BtnCategory>
   )
 }

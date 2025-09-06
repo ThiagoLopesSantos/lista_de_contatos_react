@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom'
 import { CardBtn } from '../../styles'
 import { Category } from '../../utils/enums/Contact'
 import { FormContainer, InputContainer, InputCtg, IptCamp } from './styles'
-import Contact from '../../models/Contact'
 import { register } from '../../store/reducers/contactsSlice'
 
 const AddForm = () => {

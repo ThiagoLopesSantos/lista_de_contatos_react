@@ -15,10 +15,6 @@ import { LinkCbBtn } from '../../styles/index'
 import { BtnIcon } from '../../components/Interactions/styles'
 import { Category } from '../../utils/enums/Contact'
 
-type Props = {
-  showFilters: boolean
-}
-
 const Header = () => {
   const navigate = useNavigate()
   const location = useLocation()
@@ -46,22 +42,22 @@ const Header = () => {
             <p>Categoria:</p>
             <Categories
               fCategory={Category.TODOS}
-              capition="todos"
+              caption="todos"
               onCategoryClick={closeMenu}
             />
             <Categories
               fCategory={Category.FAMILIA}
-              capition="familia"
+              caption="familia"
               onCategoryClick={closeMenu}
             />
             <Categories
               fCategory={Category.AMIGOS}
-              capition="amigos"
+              caption="amigos"
               onCategoryClick={closeMenu}
             />
             <Categories
               fCategory={Category.TRABALHO}
-              capition="trabalho"
+              caption="trabalho"
               onCategoryClick={closeMenu}
             />
           </CtgContainer>
