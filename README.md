@@ -22,8 +22,14 @@ O projeto simula uma **lista de contatos** que permite cadastrar, editar, exclui
 ### 🔹 Tela Inicial
 ![Tela inicial da aplicação](./docs/screenshot-home.png)
 
+### 🔹 Tela Inicial Responsiva
+![Tela inicial da aplicação](./docs/screenshot-responsive.png)
+
 ### 🔹 Adicionar Contato
 ![Formulário de cadastro de contato](./docs/screenshot-add.png)
+
+### 🔹 Adicionar Contato Responsivo
+![Formulário de cadastro de contato](./docs/screenshot-responsive-add.png)
 
 ### 🔹 Editar Contato
 ![Edição de contato existente](./docs/screenshot-edit.png)
@@ -67,6 +73,8 @@ Durante o desenvolvimento deste projeto, aprimorei habilidades importantes:
   Como passar funções como props para que um componente filho possa alterar o estado de um componente pai, criando uma experiência de usuário mais interativa e responsiva.  
   
 
+---
+### **Em breve implementação de api...**
 ---
 
 ## 💡 Exemplos de Uso dos Componentes
