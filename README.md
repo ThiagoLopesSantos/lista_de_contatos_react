@@ -2,7 +2,7 @@
 
 ![Badge de Status](https://img.shields.io/badge/status-online-brightgreen)
 
-**[Clique aqui para ver a aplicação ao vivo!](https://URL_DO_VERCEL)**
+**[Clique aqui para ver a aplicação ao vivo!](https://lista-de-contatos-frontend.vercel.app/)**
 
 ## Sobre o Projeto
 
@@ -10,7 +10,7 @@ Este é o frontend da minha aplicação de Agenda de Contatos. O que começou co
 
 Esta aplicação foi desenhada para ser uma SPA (Single Page Application) moderna, reativa e com uma ótima experiência de usuário. Ela é a "face visível" do meu projeto full-stack, responsável por capturar as interações do usuário e conversar com o servidor.
 
-➡️ **[Confira aqui o repositório do Backend (API)](https://URL_DO_REPOSITORIO_DA_API)**
+➡️ **[Confira aqui o repositório do Backend (API)](https://github.com/ThiagoLopesSantos/lista_de_contatos_api)**
 
 ---
 
@@ -68,4 +68,4 @@ npm install
 # Inicie a aplicação
 npm start
 ```
-> **Atenção:** É necessário que o [servidor da API](https://URL_DO_REPOSITORIO_DA_API) esteja rodando localmente para que a aplicação funcione.
+> **Atenção:** É necessário que o [servidor da API](https://github.com/ThiagoLopesSantos/lista_de_contatos_api) esteja rodando localmente para que a aplicação funcione.
