@@ -1,76 +1,71 @@
-# Agenda de Contatos Full-Stack: Uma Jornada de Evolução 📞
+# Agenda de Contatos - Frontend (React & TypeScript) 📞
 
-![Badge de Status do Projeto](https://img.shields.io/badge/status-funcional%20localmente-brightgreen)
+![Badge de Status](https://img.shields.io/badge/status-online-brightgreen)
 
-Olá! Bem-vindo(a) ao meu projeto de Agenda de Contatos. O que começou como um exercício focado em React e gerenciamento de estado evoluiu para uma aplicação **Full-Stack** completa, e este repositório é o registro dessa jornada.
+**[Clique aqui para ver a aplicação ao vivo!](https://URL_DO_VERCEL)**
 
----
+## Sobre o Projeto
 
-## 🚀 A Evolução do Projeto: De SPA a Full-Stack
+Este é o frontend da minha aplicação de Agenda de Contatos. O que começou como um projeto para praticar React e Redux evoluiu para uma interface de usuário completa e funcional, que se comunica com uma API backend dedicada para gerenciar os dados.
 
-Inicialmente, este projeto foi construído como uma **SPA (Single Page Application)** puramente frontend. Toda a lógica de adicionar, editar e remover contatos era gerenciada no estado do navegador, utilizando Redux para controlar os dados. Era uma ótima forma de praticar React e TypeScript.
+Esta aplicação foi desenhada para ser uma SPA (Single Page Application) moderna, reativa e com uma ótima experiência de usuário. Ela é a "face visível" do meu projeto full-stack, responsável por capturar as interações do usuário e conversar com o servidor.
 
-> *Você pode conferir a versão original, puramente frontend, na branch [`versao-frontend-only`](https://github.com/ThiagoLopesSantos/lista_de_contatos_react/tree/versao-frontend-only).*
-
-Percebi que, para tornar a aplicação mais robusta e "real", era preciso dar o próximo passo: desacoplar a gestão dos dados do cliente. Foi aí que decidi construir uma **API RESTful dedicada** para ser o cérebro da aplicação.
-
-A branch `main` agora reflete essa nova arquitetura, onde o frontend (cliente) consome os dados de um backend (servidor) que construí com **Node.js e Express**. Essa mudança me permitiu implementar um ciclo **CRUD** (Create, Read, Update, Delete) completo e funcional, simulando como as aplicações modernas funcionam na prática.
+➡️ **[Confira aqui o repositório do Backend (API)](https://URL_DO_REPOSITORIO_DA_API)**
 
 ---
 
-## ✨ Funcionalidades Atuais
+## ✨ Funcionalidades
 
-* **Listagem Dinâmica:** Os contatos são buscados diretamente da API ao carregar a página.
-* **Criação Persistente:** Novos contatos são enviados e salvos no servidor.
-* **Edição e Remoção:** As atualizações e exclusões são refletidas no servidor, garantindo a integridade dos dados.
-* **Filtragem e Busca:** Mecanismos reativos para encontrar contatos específicos.
+* **Interface Reativa:** Construída com componentes React para atualizações de tela instantâneas.
+* **Gerenciamento de Estado Centralizado:** Utiliza Redux Toolkit para um controle de estado previsível e escalável.
+* **Comunicação Assíncrona:** Usa `asyncThunks` para lidar com as chamadas à API, tratando estados de carregamento e erro.
+* **Roteamento:** Navegação entre a lista de contatos e o formulário de cadastro implementada com React Router.
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-### **Frontend (Cliente)**
-* **React** e **TypeScript** para uma base de código robusta e tipada.
-* **Redux Toolkit** para gerenciar o estado global e as chamadas assíncronas para a API (`asyncThunks`).
-* **React Router** para a navegação entre as páginas de listagem e cadastro.
-* **Styled-Components** para a estilização.
-
-### **Backend (Servidor)**
-* **Node.js** e **Express.js** para a construção da API RESTful.
-* **CORS** para a comunicação segura entre o cliente e o servidor.
+* **React**
+* **TypeScript**
+* **Redux Toolkit**
+* **React Router**
+* **Styled-Components** para estilização
+* **Vercel** para deploy e hospedagem
 
 ---
 
-## 🚀 Como Rodar o Projeto Localmente
+## 🚀 Minha Jornada de Aprendizado
 
-Para vivenciar a experiência full-stack, é preciso rodar as duas partes do projeto simultaneamente.
+Este projeto foi uma imersão profunda no ecossistema do React e no desenvolvimento frontend moderno. O maior desafio (e aprendizado) foi transformar uma aplicação que funcionava localmente em algo que pudesse ser publicado na web.
 
-### **1. Iniciando o Backend (Servidor da API)**
+Nesta jornada, aprendi a:
+* Estruturar e depurar um **processo de build de produção**, corrigindo erros de tipagem e linting que não apareciam no ambiente de desenvolvimento.
+* Lidar com **Variáveis de Ambiente** (`.env`) para gerenciar diferentes URLs de API (local vs. produção), uma prática essencial em projetos reais.
+* Depurar **problemas de deploy e roteamento** em plataformas como o Vercel, entendendo como a configuração de build e os `rewrites` impactam a aplicação final.
+* Construir uma interface resiliente, que oferece feedback ao usuário durante os estados de carregamento e falha na comunicação com a API.
+
+---
+
+## 🔮 Próximos Passos
+
+O plano é continuar evoluindo esta aplicação para torná-la ainda mais completa e segura. Os próximos grandes passos planejados são:
+
+* **Implementar um Sistema de Login:** Criar rotas de autenticação (telas de login, cadastro de usuário) para que cada pessoa tenha sua própria agenda de contatos privada.
+* **Integrar com um Banco de Dados SQL:** Conectar a um backend mais robusto com um banco de dados (como PostgreSQL) para garantir que os dados dos contatos sejam permanentes e não se percam.está pronta para consumir essa API mais robusta.
+
+---
+
+## ⚙️ Como Rodar Localmente
 
 ```bash
-# Navegue até a pasta do backend
-cd backend
-
+# Clone este repositório
 # Instale as dependências
 npm install
 
-# Inicie o servidor
-node server.js
-```
-> O servidor estará rodando em `http://localhost:4000`.
-
-### **2. Iniciando o Frontend (Aplicação React)**
-
-```bash
-# Em um NOVO terminal, navegue até a pasta do frontend
-cd frontend
-
-# Instale as dependências
-npm install
+# Crie um arquivo .env.development na raiz e adicione a linha abaixo:
+# REACT_APP_API_URL=http://localhost:4000
 
 # Inicie a aplicação
 npm start
 ```
-> A aplicação estará disponível no seu navegador em `http://localhost:3000`.
-
----
+> **Atenção:** É necessário que o [servidor da API](https://URL_DO_REPOSITORIO_DA_API) esteja rodando localmente para que a aplicação funcione.
