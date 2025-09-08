@@ -57,6 +57,14 @@ const ContactList = () => {
     if (status === 'loading') {
       return <S.loadingContacts>Carregando...</S.loadingContacts>
     }
+    // NOVA VERIFICAÇÃO: Se carregou com sucesso E a lista de itens está vazia...
+    if (status === 'succeeded' && itens.length === 0) {
+      return (
+        <S.loadingContacts>
+          Sua agenda está vazia. Adicione um novo contato para começar!
+        </S.loadingContacts>
+      )
+    }
 
     if (status === 'succeeded') {
       return (
