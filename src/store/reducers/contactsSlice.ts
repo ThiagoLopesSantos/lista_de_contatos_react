@@ -9,7 +9,7 @@ const initialState: {
   status: 'idle'
 }
 
-const apiUrl = `${process.env.REACT_APP_API_URL}/contacts`
+const apiUrl = `${process.env.REACT_APP_API_URL}/api/contacts`
 
 // Função assíncrona para buscar contatos de uma API
 export const fetchContacts = createAsyncThunk(
