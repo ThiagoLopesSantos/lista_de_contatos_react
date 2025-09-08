@@ -6,13 +6,11 @@ import { device } from '../../styles/breakpoints'
 
 export const ItrContainer = styled.div`
   ${flexCenter}
-  margin-top: 20px;
   max-width: 1024px;
   font-size: ${variaveis.small};
   width: 100%;
 
   ${device.mobile} {
-    margin-top: 10px;
     flex-direction: column;
     gap: 10px;
   }

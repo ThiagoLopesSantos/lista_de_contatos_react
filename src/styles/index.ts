@@ -31,7 +31,6 @@ export const HeaderContainer = styled.header`
 
 export const CtgContainer = styled.div<CtgContainerProps>`
   ${flexCenter}
-  margin-top: 20px;
   padding: 8px;
   width: 100%;
   gap: 20px;
@@ -45,9 +44,10 @@ export const CtgContainer = styled.div<CtgContainerProps>`
     position: absolute;
     top: 20%;
     left: 0;
-    height: 35vh;
+    height: 38vh;
     background-color: ${themes.azul};
     padding: 20px 0;
+    margin-top: 18px;
     width: 100%;
     transform: ${(props) =>
       props.isMenuOpen ? 'translateY(0)' : 'translateY(-130%)'};
@@ -85,12 +85,12 @@ export const LinkCbBtn = styled.button`
   gap: 8px;
   background-color: ${themes.brancoOpaco};
   padding: 8px 16px;
-  margin: 32px 0;
+  margin: 8px 0;
   border-color: ${themes.brancoOpaco};
   cursor: pointer;
 
   ${device.mobile} {
-    margin: 10px 0;
+    margin: 5px 0;
     padding: 6px 12px;
   }
 `
