@@ -1,5 +1,5 @@
 import Contact from '../../models/Contact'
-import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 const initialState: {
   itens: Contact[]
@@ -9,11 +9,13 @@ const initialState: {
   status: 'idle'
 }
 
+const apiUrl = `${process.env.REACT_APP_API_URL}/contacts`
+
 // Função assíncrona para buscar contatos de uma API
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchContacts',
   async () => {
-    const response = await fetch('http://localhost:4000/contacts')
+    const response = await fetch(apiUrl)
     const contacts = await response.json()
 
     return contacts as Contact[]
@@ -23,7 +25,7 @@ export const fetchContacts = createAsyncThunk(
 export const addContact = createAsyncThunk(
   'contacts/add',
   async (newContact: Omit<Contact, 'id'>) => {
-    const response = await fetch('http://localhost:4000/contacts', {
+    const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -38,22 +40,13 @@ export const addContact = createAsyncThunk(
 export const editContact = createAsyncThunk(
   'contacts/edit',
   async (contact: Contact) => {
-    const response = await fetch(
-      `http://localhost:4000/contacts/${contact.id}`,
-      {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          id: contact.id,
-          category: contact.category,
-          name: contact.name,
-          email: contact.email,
-          phone: contact.phone
-        })
-      }
-    )
+    const response = await fetch(`${apiUrl}/${contact.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(contact)
+    })
     const updatedContact = await response.json()
     return updatedContact as Contact
   }
@@ -62,7 +55,7 @@ export const editContact = createAsyncThunk(
 export const removeContact = createAsyncThunk(
   'contacts/remove',
   async (id: number) => {
-    await fetch(`http://localhost:4000/contacts/${id}`, {
+    await fetch(`${apiUrl}/${id}`, {
       method: 'DELETE'
     })
     return id
@@ -73,12 +66,12 @@ const contactsSlice = createSlice({
   name: 'contacts',
   initialState,
   reducers: {
+    // Estas funções agora estão sendo utilizadas no extraReducers como addContact, removeContact e editContact
     // remove: (state, action: PayloadAction<number>) => {
     //   state.itens = [
     //     ...state.itens.filter((contact) => contact.id !== action.payload)
     //   ]
     // },
-    // Estas funções agora estão sendo utilizadas no extraReducers como addContact e editContact
     // edit: (state, action: PayloadAction<Contact>) => {
     //   const contactIndex = state.itens.findIndex(
     //     (c) => c.id === action.payload.id
